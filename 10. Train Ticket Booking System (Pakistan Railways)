@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+float calculateTrainFare(char class[], float distance) {
+    if (strcmp(class, "Economy") == 0) return distance * 5;
+    if (strcmp(class, "Business") == 0) return distance * 10;
+    if (strcmp(class, "First") == 0) return distance * 15;
+    return -1; // Invalid class
+}
+
+int main() {
+    char class[10];
+    float distance;
+    
+    printf("Enter travel class (Economy, Business, First): ");
+    scanf("%s", class);
+    printf("Enter distance in km: ");
+    scanf("%f", &distance);
+    
+    float fare = calculateTrainFare(class, distance);
+    if (fare == -1) {
+        printf("Invalid travel class.\n");
+    } else {
+        printf("Fare = %.2f PKR\n", fare);
+    }
+    
+    return 0;
+}

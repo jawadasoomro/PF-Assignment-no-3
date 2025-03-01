@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<conio.h>
+
+float calculate_fuel_cost(float distance,float fuel_average, float fuel_price);
+int main(){
+	int distance,fuel_average,fuel_price;
+	
+	printf("Enter total trip distance:(In Kilometer):");
+	scanf("%d",&distance);
+	printf("Enter the fuel_average (km/liter):");
+	scanf("%d",&fuel_average);
+	printf("Enter fuel price:");
+	scanf("%d",&fuel_price);
+	
+     distance*=fuel_price /10;
+	printf("the  total fuel cost is %d ",distance,fuel_average,fuel_price);
+	
+	return 0;
+	
+	
+	}

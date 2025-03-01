@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+float convertCurrency(float amount, char currencyType) {
+    float rate;
+    
+    switch (currencyType) {
+        case 'U':
+            printf("Enter exchange rate for USD to PKR: ");
+            break;
+        case 'S':
+            printf("Enter exchange rate for SAR to PKR: ");
+            break;
+        case 'A':
+            printf("Enter exchange rate for AED to PKR: ");
+            break;
+        default:
+            printf("Invalid currency type. Use U for USD, S for SAR, A for AED.\n");
+            return 0;
+    }
+    
+    scanf("%f", &rate);
+    return amount * rate;
+}
+
+int main() {
+    float amount;
+    char currencyType;
+    
+    printf("Enter amount and currency type (U for USD, S for SAR, A for AED): ");
+    scanf("%f %c", &amount, &currencyType);
+    
+    float pkr = convertCurrency(amount, currencyType);
+    printf("PKR = %.2f\n", pkr);
+    
+    return 0;
+}
